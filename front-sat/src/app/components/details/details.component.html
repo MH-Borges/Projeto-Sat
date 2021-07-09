@@ -1,0 +1,40 @@
+<section id="update">
+    <div class="container">
+      <div *ngIf="currentBase.id">
+        <h3>Edição de Informações</h3>
+        <form class="editBlock"> 
+          <div class="BlockBox">
+            <input
+              type="text"
+              class="form-control"
+              id="nome"
+              [(ngModel)]="currentBase.nome"
+              name="nome"
+            />
+            <span>Nome Completo</span>
+          </div>
+          <div class="BlockBox">
+            <input
+              type="text"
+              class="form-control"
+              id="funcao"
+              [(ngModel)]="currentBase.funcao"
+              name="funcao"
+            />
+            <span>Função</span>
+          </div>
+        </form>
+        <div class="btns">
+          <button class="btn update" type="submit" (click)="update()"> Atualizar</button>
+          <button class="btn btn-danger deleteBt" (click)="delete()">Deletar</button>
+          <p>{{ message }}</p>
+        </div>
+      </div>
+
+      <div *ngIf="!currentBase.id">
+        <p>Nenhum id selecionado, impossivel de acessar...</p>
+      </div>
+    
+    </div>
+
+  </section>

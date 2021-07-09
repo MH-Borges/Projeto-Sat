@@ -1,0 +1,61 @@
+<section id="list">
+
+  <div class="container">
+    <h4>Lista de Funcionários</h4>
+    <div class="col-md-12 seachBx">
+      <input type="text" class="form-control" placeholder="Procure por um Nome" [(ngModel)]="nome"/>
+      <button class="btn" type="button" (click)="searchNome()"> Procurar </button>
+    </div>
+
+    <div class="col-md-12 ListBx">
+      <table class="table table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Função</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let funcionario of ListSats;" >
+            <td>{{ funcionario.id }}</td>
+            <td>{{ funcionario.nome }}</td>
+            <td>{{ funcionario.funcao }}</td>
+            <td>
+              <a routerLink="/Index/{{ funcionario.id }}">
+                <i class="fas fa-edit"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button class="btn new" routerLink="../add">
+        <i class="fas fa-plus"></i>
+        Novo
+      </button>
+      <button type="button" class="btn deleteall" data-toggle="modal" data-target="#deletAll">
+        <i class="fas fa-exclamation-triangle"></i> 
+        Apagar todos 
+        <i class="fas fa-exclamation-triangle"></i>
+      </button>
+
+      <div class="modal fade" id="deletAll" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <span class="text-danger">TEM CERTEZA QUE DESEJA EXCLUIR TODOS ELEMENTOS DA LISTA?</span>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="fechaBanner" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <button type="button" (click)="removeAll()" class="btn btn-danger"> Excluir </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>

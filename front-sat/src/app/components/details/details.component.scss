@@ -1,0 +1,86 @@
+#update{
+    width: 100%;
+    display: flex;
+    position: relative;
+    padding: 5vw;
+    .container{
+        margin-top: 3vw;
+        padding: 2vw 10vw;
+        h3{
+            text-align: center;
+            margin-bottom: 3vw;
+            font-weight: 500;
+            font-size: 1.8vw;
+        }
+        .editBlock{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1vw;
+            .BlockBox{
+                width: 85%;
+                position: relative;
+                margin: 0 0 2.5vw 0;
+                input{
+                    width: 100%;
+                    padding: 1vw;
+                    font-size: 1vw;
+                    color: white;
+                    border: none;
+                    background: #004976;
+                    opacity: 0.6;
+                    outline: none;
+                    border-radius: 1.5vw;
+                }
+                span{
+                    position: absolute;
+                    font-style: italic;
+                    left: 1vw;
+                    top: 0.3vw;
+                    font-size: 1.2vw;
+                    color: rgb(43, 43, 43);
+                    transition: 0.5s;
+                    pointer-events: none;
+                }
+            }
+            .BlockBox input:focus ~ span, input:valid ~ span{
+                transform:translate(-0.5vw, -2.1vw);
+                font-size: 1.1vw;
+                color:#00b388;
+                font-style: normal;
+            }       
+            
+        }
+        .btns{
+            display: flex;
+            margin-top: 1vw;
+            position: relative;
+            .update{
+                background-color: #00b388;
+                border-radius: 0.8vw;
+                font-weight: 600;
+                color: #004976;
+                padding: 0.3vw 1vw;
+                font-size: 0.9vw;
+            }
+            .deleteBt{
+                color:white;
+                border-radius: 0.8vw;
+                font-weight: 600;
+                padding: 0.3vw 1vw;
+                font-size: 0.9vw;
+                margin-left: auto;
+            }
+            p{
+                width: 100%;
+                text-align: center;
+                bottom: -3vw;
+                position: absolute;
+                font-size: 1.2vw;
+                color: #00b388;
+                font-weight: 700;
+            }
+        }
+        
+    }
+}

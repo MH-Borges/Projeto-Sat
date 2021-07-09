@@ -1,0 +1,39 @@
+<section id="add">
+
+  <div class="container">
+    <h3>Adicione um novo registro!</h3>
+
+    <div class="submit-form">
+      <div class="newBlock" *ngIf="!submitted">
+        <div class="BlockBox">
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            required
+            [(ngModel)]="BaseSat.nome"
+            name="nome"
+          />
+          <span>Nome Completo</span>
+        </div>
+        <div class="BlockBox">
+          <input
+            class="form-control"
+            id="funcao"
+            required
+            [(ngModel)]="BaseSat.funcao"
+            name="funcao"
+          />
+          <span>Função</span>
+        </div>
+        <button (click)="save()" class="btn add">Adicionar</button>      
+      </div>
+      
+      <div *ngIf="submitted">
+        <h4 class="text-success">Salvo com sucesso!!</h4>
+      </div>
+
+    </div>
+  </div>
+
+</section>
